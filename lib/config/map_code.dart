@@ -239,6 +239,9 @@ class _LocationPickerWidgetState extends State<LocationPickerWidget>
     });
 
     _updateAddressFromCenter();
+    await Future.delayed(const Duration(milliseconds: 300), () {
+      _checkDeliveryZone();
+    },);
   }
 
   Future<void> _getCurrentUserLocation() async {
@@ -488,6 +491,7 @@ class _LocationPickerWidgetState extends State<LocationPickerWidget>
           _centerLocation = newLatLng;
           _currentAddress = formatted;
         });
+        await _updateAddressFromCenter();
 
         mapController?.animateCamera(
           CameraUpdate.newLatLngZoom(newLatLng, 16.0),
@@ -1144,12 +1148,14 @@ class _LocationPickerWidgetState extends State<LocationPickerWidget>
                   _isDeliveryAvailable = true;
                   _deliveryMessage = state.message;
                   _isCheckingDelivery = false;
+                  _isMoving = false;
                 });
               } else if (state is CheckDeliveryZoneFailure) {
                 setState(() {
                   _isDeliveryAvailable = false;
                   _deliveryMessage = state.error;
                   _isCheckingDelivery = false;
+                  _isMoving = false;
                 });
               } else if (state is CheckDeliveryZoneFailure) {
                 setState(() {
@@ -1666,13 +1672,16 @@ class _LocationPickerWidgetState extends State<LocationPickerWidget>
                                                 width: double.infinity,
                                                 height: 50,
                                                 child: ElevatedButton(
-                                                  onPressed: (_isMoving ||
-                                                          _isCheckingDelivery ||
-                                                          (!_isDeliveryAvailable &&
-                                                              _deliveryMessage
-                                                                  .isNotEmpty))
-                                                      ? null
-                                                      : _confirmLocation,
+                                                  // onPressed: (_isMoving ||
+                                                  //         _isCheckingDelivery ||
+                                                  //         (!_isDeliveryAvailable &&
+                                                  //             _deliveryMessage
+                                                  //                 .isNotEmpty))
+                                                  //     ? null
+                                                  //     : _confirmLocation,
+                                                  onPressed: () {
+                                                    _confirmLocation();
+                                                  },
                                                   style:
                                                       ElevatedButton.styleFrom(
                                                     backgroundColor:
