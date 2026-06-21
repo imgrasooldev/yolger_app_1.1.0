@@ -14,7 +14,7 @@ class SaveForLaterRepository {
       final longitude = locationService.longitude;
 
       final response = await AppHelpers.apiBaseHelper.getAPICall(
-        '${ApiRoutes.saveForLaterApi}?page=$currentPage&per_page=$perPage&latitude=$latitude&longitude=$longitude',
+        '${ApiRoutes.saveForLaterApi}?page=$currentPage&per_page=$perPage',
         {}
       );
 

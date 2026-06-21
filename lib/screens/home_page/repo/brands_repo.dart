@@ -15,9 +15,9 @@ class BrandsRepository {
       String apiUrl = '';
 
       if(categorySlug.isNotEmpty){
-        apiUrl = '${ApiRoutes.brandsApi}?scope_category_slug=$categorySlug&latitude=$latitude&longitude=$longitude';
+        apiUrl = '${ApiRoutes.brandsApi}?scope_category_slug=$categorySlug';
       } else {
-        apiUrl = '${ApiRoutes.brandsApi}?latitude=$latitude&longitude=$longitude';
+        apiUrl = '${ApiRoutes.brandsApi}';
       }
       final response = await AppHelpers.apiBaseHelper.getAPICall(
           apiUrl,

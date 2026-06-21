@@ -148,7 +148,7 @@ class UserWishlistRepository {
       final longitude = locationService.longitude;
 
       final response = await AppHelpers.apiBaseHelper.getAPICall(
-        '${ApiRoutes.wishlistProductApi}$wishlistId?page=$currentPage&per_page=$perPage&latitude=$latitude&longitude=$longitude',
+        '${ApiRoutes.wishlistProductApi}$wishlistId?page=$currentPage&per_page=$perPage',
         {}
       );
 

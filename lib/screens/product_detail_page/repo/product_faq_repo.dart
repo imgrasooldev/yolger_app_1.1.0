@@ -11,7 +11,7 @@ class ProductFAQRepository {
       final latitude = locationService!.latitude;
       final longitude = locationService.longitude;
       final response = await apiBaseHelper.getAPICall(
-          '${ApiRoutes.productDetailApi}$productSlug/faqs?latitude=$latitude&longitude=$longitude', {}
+          '${ApiRoutes.productDetailApi}$productSlug/faqs', {}
       );
       return response.data;
     }catch(e){

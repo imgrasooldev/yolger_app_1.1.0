@@ -11,7 +11,7 @@ class ProductReviewRepository {
       final latitude = locationService!.latitude;
       final longitude = locationService.longitude;
       final response = await apiBaseHelper.getAPICall(
-          '${ApiRoutes.productDetailApi}$productSlug/reviews?latitude=$latitude&longitude=$longitude', {}
+          '${ApiRoutes.productDetailApi}$productSlug/reviews', {}
       );
       return response.data;
     } catch(e) {

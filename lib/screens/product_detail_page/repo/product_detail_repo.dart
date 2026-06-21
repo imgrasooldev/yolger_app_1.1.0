@@ -11,7 +11,7 @@ class ProductDetailRepository {
       final latitude = locationService!.latitude;
       final longitude = locationService.longitude;
       final response = await apiBaseHelper.getAPICall(
-        '${ApiRoutes.productDetailApi}$productSlug?latitude=$latitude&longitude=$longitude', {}
+        '${ApiRoutes.productDetailApi}$productSlug', {}
       );
       return response.data;
     }catch(e){
@@ -28,9 +28,9 @@ class ProductDetailRepository {
       String apiUrl = '';
       if(excludeProductSlug.isNotEmpty){
         String excludeParam = excludeProductSlug.join(",");
-        apiUrl = '${ApiRoutes.getSimilarProductApi}?exclude_product=$excludeParam&latitude=$latitude&longitude=$longitude';
+        apiUrl = '${ApiRoutes.getSimilarProductApi}?exclude_product=$excludeParam';
       } else {
-        apiUrl = '${ApiRoutes.getSimilarProductApi}?latitude=$latitude&longitude=$longitude';
+        apiUrl = '${ApiRoutes.getSimilarProductApi}';
       }
       final response = await apiBaseHelper.getAPICall(
           apiUrl,

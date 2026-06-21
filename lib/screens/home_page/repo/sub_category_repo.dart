@@ -29,9 +29,9 @@ class SubCategoryRepository {
       }
 
       if(isForAllCategory) {
-        apiUrl = '${ApiRoutes.allTabSubCategoryApi}?$filterParam&latitude=$latitude&longitude=$longitude&per_page=$perPageParam$pageParam';
+        apiUrl = '${ApiRoutes.allTabSubCategoryApi}?$filterParam&per_page=$perPageParam$pageParam';
       } else {
-        apiUrl = '${ApiRoutes.subCategoryApi}?slug=$slug&latitude=$latitude&longitude=$longitude&per_page=$perPage$pageParam';
+        apiUrl = '${ApiRoutes.subCategoryApi}?slug=$slug&per_page=$perPage$pageParam';
       }
       final response = await AppHelpers.apiBaseHelper.getAPICall(
         apiUrl,
