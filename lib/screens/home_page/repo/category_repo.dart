@@ -14,7 +14,7 @@ class CategoryRepository {
       log('fetchCategory storedLocation=${locationService == null ? 'NULL' : '${locationService.latitude},${locationService.longitude}'}');
       final latitude = locationService!.latitude;
       final longitude = locationService.longitude;
-      final url = '${ApiRoutes.categoryApi}?per_page=$perPage&page=$currentPage&latitude=$latitude&longitude=$longitude&home=true';
+      final url = '${ApiRoutes.categoryApi}?per_page=$perPage&page=$currentPage&home=true';
       final response = await AppHelpers.apiBaseHelper.getAPICall(url, {});
       final data = response.data;
       log('fetchCategory url=$url returnedCount=${data?['data']?['data']?.length} total=${data?['data']?['total']}');

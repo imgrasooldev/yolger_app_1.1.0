@@ -13,9 +13,9 @@ class BannerRepository {
       final longitude = locationService.longitude;
       String apiUrl = '';
       if(categorySlug.isNotEmpty){
-        apiUrl = '${ApiRoutes.bannerApi}?scope_category_slug=$categorySlug&latitude=$latitude&longitude=$longitude';
+        apiUrl = '${ApiRoutes.bannerApi}?scope_category_slug=$categorySlug';
       } else {
-        apiUrl = '${ApiRoutes.bannerApi}?latitude=$latitude&longitude=$longitude';
+        apiUrl = '${ApiRoutes.bannerApi}';
       }
       final response = await AppHelpers.apiBaseHelper.getAPICall(
         apiUrl,
