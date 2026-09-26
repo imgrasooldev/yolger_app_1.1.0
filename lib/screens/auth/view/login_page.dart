@@ -179,12 +179,12 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
               } else if (state is AuthFailed) {
                 ToastManager.show(context: context, message: state.error, type: ToastType.error);
               } else if (state is SocialAuthSuccess) {
-                if (state.isRegister) {
-                  // Fresh signup via social auth — collect optional referral code.
-                  GoRouter.of(context).pushReplacement(
-                    AppRoutes.referralCodeEntry,
-                  );
-                } else {
+                // if (state.isRegister) {
+                //   // Fresh signup via social auth — collect optional referral code.
+                //   GoRouter.of(context).pushReplacement(
+                //     AppRoutes.referralCodeEntry,
+                //   );
+                // } else {
                   // Returning user — mirror the AuthSuccess path.
                   GoRouter.of(context)
                       .pushReplacement(AppRoutes.splashScreen);
@@ -197,7 +197,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                   Future.delayed(const Duration(seconds: 1), () {
                     getUserCartBloc.add(SyncCart());
                   });
-                }
+                // }
               }
             },
             builder: (context, authState) {
