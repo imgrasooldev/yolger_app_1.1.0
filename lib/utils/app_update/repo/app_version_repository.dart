@@ -11,6 +11,12 @@ class AppVersionRepository {
     try {
       final platform = Platform.isAndroid ? 'android' : 'ios';
 
+      log(
+        'Version Check URL: ${ApiRoutes.versionCheckApi}?platform=$platform'
+            '&current_version=${AppHelpers.systemVersion}'
+            '&app=customer',
+      );
+
       final response = await AppHelpers.apiBaseHelper.getAPICall(
         '${ApiRoutes.versionCheckApi}?platform=$platform',
         {
@@ -18,6 +24,8 @@ class AppVersionRepository {
           'app': 'customer'
         },
       );
+
+      log("fetch update config: ${response}");
 
       if (response.statusCode != 200) {
         log('[AppVersionRepo] API returned ${response.statusCode} — failing open');

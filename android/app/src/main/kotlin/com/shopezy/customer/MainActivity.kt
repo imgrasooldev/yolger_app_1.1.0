@@ -1,4 +1,4 @@
-package com.hyperLocal.customer
+package com.shopezy.customer
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

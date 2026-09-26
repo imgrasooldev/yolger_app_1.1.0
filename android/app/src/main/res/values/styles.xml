@@ -3,12 +3,14 @@
     <!-- Option 1: Using AppCompat (simpler) -->
     <style name="LaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     </style>
-
     <style name="NormalTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">?android:colorBackground</item>
     </style>
-
     <!-- Option 2: Using MaterialComponents (recommended for Material Design) -->
     <!--
     <style name="LaunchTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -20,9 +22,7 @@
     </style>
     -->
 </resources>
-
-
-    <!--
+<!--
     <?xml version="1.0" encoding="utf-8"?>
     <resources>
         &lt;!&ndash; Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off &ndash;&gt;
