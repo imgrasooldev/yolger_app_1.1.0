@@ -194,22 +194,22 @@ class _AccountPageState extends State<AccountPage> {
                                     color:
                                         Theme.of(context).colorScheme.outline),
                               ),
-                              Expanded(
-                                child: AnimatedButton(
-                                    animationType: TapAnimationType.scale,
-                                    onTap: () {
-                                      if (Global.userData == null) {
-                                        GoRouter.of(context)
-                                            .push(AppRoutes.login);
-                                      } else {
-                                        GoRouter.of(context)
-                                            .push(AppRoutes.wallet);
-                                      }
-                                    },
-                                    child: QuickAction(
-                                        label: l10n?.wallet ?? "Wallet",
-                                        icon: HeroiconsSolid.wallet)),
-                              ),
+                              // Expanded(
+                              //   child: AnimatedButton(
+                              //       animationType: TapAnimationType.scale,
+                              //       onTap: () {
+                              //         if (Global.userData == null) {
+                              //           GoRouter.of(context)
+                              //               .push(AppRoutes.login);
+                              //         } else {
+                              //           GoRouter.of(context)
+                              //               .push(AppRoutes.wallet);
+                              //         }
+                              //       },
+                              //       child: QuickAction(
+                              //           label: l10n?.wallet ?? "Wallet",
+                              //           icon: HeroiconsSolid.wallet)),
+                              // ),
                             ],
                           ),
                         ),

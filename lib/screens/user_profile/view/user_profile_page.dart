@@ -457,13 +457,13 @@ class _UserProfilePageState extends State<UserProfilePage> {
         value: userData.country ?? l.notProvided,
 
       ),
-      _DetailEntry(
-        icon: Icons.account_balance_wallet_outlined,
-        label: '${l.wallet} ${l.balance}',
-        value:
-            '${AppHelpers.currency}${userData.walletBalance?.toString() ?? '0'}',
-        valueColor: AppTheme.primaryColor,
-      ),
+      // _DetailEntry(
+      //   icon: Icons.account_balance_wallet_outlined,
+      //   label: '${l.wallet} ${l.balance}',
+      //   value:
+      //       '${AppHelpers.currency}${userData.walletBalance?.toString() ?? '0'}',
+      //   valueColor: AppTheme.primaryColor,
+      // ),
       // _DetailEntry(
     ];
 
