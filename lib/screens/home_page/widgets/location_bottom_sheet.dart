@@ -251,7 +251,7 @@ class _LocationBottomSheetState extends State<LocationBottomSheet>
                 : AppConstant.iosMapKey,
             'X-Goog-FieldMask': 'location,formattedAddress',  // only request what you need
             'Content-Type': 'application/json',
-            // Optional: 'Referer': 'com.shopezy.customer',  // usually not required for server-side calls
+            // Optional: 'Referer': 'com.shopezyna.customer',  // usually not required for server-side calls
           },
         ),
       );

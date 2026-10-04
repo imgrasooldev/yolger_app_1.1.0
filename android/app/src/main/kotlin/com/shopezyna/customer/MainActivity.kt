@@ -1,4 +1,4 @@
-package com.shopezy.customer
+package com.shopezyna.customer
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

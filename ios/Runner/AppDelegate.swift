@@ -18,7 +18,7 @@ import UserNotifications
 
     application.registerForRemoteNotifications()
 
-    GMSServices.provideAPIKey("YOUR_IOS_MAP_KEY")
+    GMSServices.provideAPIKey("AIzaSyBe-l6ekZDsI0RPtsOD2a8po8JJLmakScQ")
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
